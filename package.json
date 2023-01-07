@@ -1,0 +1,31 @@
+{
+  "name": "cogent-labs-assignment",
+  "version": "1.0.0",
+  "description": "Thumbnail Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shagunchaurasia/cogent-labs-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shagunchaurasia/cogent-labs-assignment/issues"
+  },
+  "homepage": "https://github.com/shagunchaurasia/cogent-labs-assignment#readme",
+  "dependencies": {
+    "@types/express": "^4.17.15",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.11.18",
+    "@types/sharp": "^0.31.1",
+    "body-parser": "^1.20.1",
+    "bull": "^4.10.2",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.31.3"
+  }
+}
