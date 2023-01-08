@@ -8,7 +8,7 @@ const ImageQueue = new Bull(
   process.env.REDIS_URL ?? "localhost:6739"
 );
 
-const addToQueue = async (data: Job[]) => {
+const addToQueue = async (data:any) => {
   const promises = data.map((jobDetails: Job) => {
     ImageQueue.add(jobDetails,{attempts: 5});
   });
