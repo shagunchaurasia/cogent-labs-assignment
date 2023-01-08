@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "02e94d2a-c43c-4791-b65a-fcad91b104d7",
+		"name": "Cogent Labs Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3075840"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5001/hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"/Users/shagunchaurasia/Downloads/Images/adam-kool-ndN00KmbJ1c-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/andrey-k-R64AHvDHaB8-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/benjamin-lehman-i3VR6GK6Pfk-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/benjamin-lehman-VnUX1LJ8P6E-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/boxed-water-is-better-9VwoPiXZIQo-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/chris curry F9b3BFDVbX8 unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/dan-meyers-IQVFVH0ajag-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/david-marcu-78A265wPiO4-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/happy-new-year-2023-sparkling-burning-text-happy-new-year-2023-isolated-black-background-beauti.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/henry-be-IicyiaPYGGI-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/hushaan-fromtinyisles-Jvx1zlTEOaM-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/jevgeni-fil-e_YVxeaFr9A-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/krisjanis-kazaks-19C5qQgyA2M-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/lukasz-szmigiel-Uw9DfCe2e7A-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/martin-katler-DPLtqWYndaE-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/rye-jessen-As3TEg-C8wY-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/sangga-rima-roman-selia-CS1cRvueOjI-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/vasilis-karkalas-v8r1DDxaWt4-unsplash.jpg",
+								"/Users/shagunchaurasia/Downloads/Images/venti-views-jRhhWVi34to-unsplash.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
