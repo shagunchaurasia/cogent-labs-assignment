@@ -25,5 +25,24 @@ To check the output please check folder "thumbnails" inside the project. Docker 
 To run the test cases:
 docker compose run backend npm run test
 
+Test Cases Considered:
+I have not considered all test cases. Few of the considered test cases are:
+1) hello api to check the service
+2) upload single file 
+3) if no file is attached
+4) multiple files upload - I have tested it with around 100 uploads, bull seems to be working well. Even if service gets interrupted retries are made.
+
+
+
+Deployment Process:
+There are many ways to deploy this application, and the best approach will depend on more specific needs and constraints. 
+
+Deploying to aws cloud platform: This can use Amazon Elastic Container Service (ECS) to run the application in a Docker container.
+
+Deploying to a virtual private server (VPS): It can also bde deployed to a VPS, such as a DigitalOcean server. This requires setting up and configuring the VPS but it can be a good option if we need more control over the environment.
+
+Deploying to a container orchestrator: Docker swarm or Kubernetes can be used to deploy the application as well but it depends on how huge of a scale is needed.
+
+
 
 

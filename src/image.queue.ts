@@ -1,13 +1,14 @@
-import { Job } from "bull";
-const Queue = require("bull");
-const sharp = require("sharp");
+import { DoneCallback, Job } from "bull";
+import Bull from "bull";
+import sharp from 'sharp';
 
-const ImageQueue = new Queue(
+
+const ImageQueue = new Bull(
   "image-queue",
   process.env.REDIS_URL ?? "localhost:6739"
 );
 
-const addToQueue = async (data: any) => {
+const addToQueue = async (data: Job[]) => {
   const promises = data.map((jobDetails: Job) => {
     ImageQueue.add(jobDetails,{attempts: 5});
   });
@@ -15,16 +16,16 @@ const addToQueue = async (data: any) => {
   await Promise.all(promises);
 };
 
-ImageQueue.process(async (job: Job, done: any) => {
+ImageQueue.process(async (job: Job, done: DoneCallback) => {
   await createThumbnail(job.data);
   done();
 });
 
-const createThumbnail = (data: any) => {
+const createThumbnail = (data: {filename:string; path:string}) => {
   return new Promise((resolve, reject) => {
     sharp(data.path)
-      .resize({ width: 100, height: 100 })
-      .toFile("thumbnails/" + data.filename, (error: any, info: any) => {
+      .resize({ width: 100, height: 100, fit: "inside" })
+      .toFile("thumbnails/" + data.filename, (error: any) => {
         if (error) {
           reject(error);
         } else {
@@ -35,7 +36,6 @@ const createThumbnail = (data: any) => {
 };
 
 ImageQueue.on("completed", (job: Job) => {
-  console.log(job)
   console.log(`Image Thumbnail Generated at thumbnails/${job.data.filename}`);
 });
 

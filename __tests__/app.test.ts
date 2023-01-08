@@ -1,7 +1,8 @@
 import request from "supertest";
 import app from "../src/app";
 import path from "path";
-import fs from "fs";
+
+
 
 describe("App /hello", () => {
   test("Hello get api", async () => {
@@ -12,6 +13,10 @@ describe("App /hello", () => {
 });
 
 describe("Upload file /upload", () => {
+  beforeAll(() => {
+    jest.setTimeout(5000);
+  });
+
   test("Upload single file", async () => {
     const imagePath = path.resolve(__dirname, `test.jpg`);
     const response = await request(app)
@@ -31,6 +36,10 @@ describe("No files attached /upload", () => {
 });
 
 describe("Upload multiple files /upload", () => {
+  beforeAll(() => {
+    jest.setTimeout(10000); 
+  });
+
   test("Multiple Files are uploaded", async () => {
     const imagePath1 = path.resolve(__dirname, `test.jpg`);
     const imagePath2 = path.resolve(__dirname, `test.jpg`);
