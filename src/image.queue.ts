@@ -9,7 +9,7 @@ const ImageQueue = new Queue(
 
 const addToQueue = async (data: any) => {
   const promises = data.map((jobDetails: Job) => {
-    ImageQueue.add(jobDetails);
+    ImageQueue.add(jobDetails,{attempts: 5});
   });
 
   await Promise.all(promises);
