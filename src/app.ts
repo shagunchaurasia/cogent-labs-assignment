@@ -54,7 +54,6 @@ app.post("/upload", upload.array("images"), async (request, response) => {
       .status(400)
       .send("Files not attached. Please check the request");
   }
-  console.log(request.files);
   if (request.files?.length == 0) {
     return response
       .status(500)
