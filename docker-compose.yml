@@ -1,0 +1,30 @@
+version: "3.2"
+
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: backend
+    environment:
+      - PORT=5001
+      - REDIS_URL=redis://cache
+    ports:
+      - "5001:5001"
+    depends_on: 
+      - redis
+
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - "6379"
+
+  redis-ui:
+    container_name: redis-commander
+    image: rediscommander/redis-commander
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
