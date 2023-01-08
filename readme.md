@@ -18,7 +18,9 @@ bull has a number of features that make it a good choice for creating job queues
 Everything is maintained with docker-compose. Please make sure ports 5001, 6379 and 8081 are available on your system.
 
 To bring up the service:
-**docker-compose up --build**
+**docker-compose up**
+Import the postman collection to your postman setup.
+Unzip the images folder in the repository. These can be used as demo to test out the apis.
 
 To monitor the queues in bull **[Redis Bull](http://localhost:8081/)**
 To check the output please check folder "thumbnails" inside the project. Docker volume folder has been mapped to the local folder to see the output results that happen in background after files have been queued.
