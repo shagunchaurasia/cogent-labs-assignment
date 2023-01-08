@@ -8,7 +8,8 @@ There can be two ways to build this that come to mind. I chose the second approa
 
 Plugins used:
 
-1. bull - To implement queue in nodejs
+1. bull - bull is a popular package for creating and managing job queues in Node.js. 
+bull has a number of features that make it a good choice for creating job queues - It is built on top of the popular redis in-memory data store, which allows it to scale horizontally across multiple machines.
 2. multer - To upload file/files (In this project you can upload multiple files together)
 3. sharp - To generate thumbnails of size provided
 
@@ -18,5 +19,11 @@ Everything is maintained with docker-compose. Please make sure ports 5001, 6379 
 To bring up the service:
 docker-compose up --build
 
+To monitor the queues in bull [Redis Bull](http://localhost:8081/)
+To check the output please check folder "thumbnails" inside the project. Docker volume folder has been mapped to the local folder to see the output results that happen in background after files have been queued.
+
 To run the test cases:
 docker compose run backend npm run test
+
+
+
