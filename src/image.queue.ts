@@ -34,10 +34,9 @@ const createThumbnail = (data: any) => {
   });
 };
 
-ImageQueue.on("completed", (job: Job, result: any) => {
-  console.log(job, result)
-  console.log("Image Thumbnail Generated");
-  console.log(job.data.path)
+ImageQueue.on("completed", (job: Job) => {
+  console.log(job)
+  console.log(`Image Thumbnail Generated at thumbnails/${job.data.filename}`);
 });
 
 export default addToQueue;

@@ -49,10 +49,16 @@ app.get("/hello", (request, response) => {
 });
 
 app.post("/upload", upload.array("images"), async (request, response) => {
+  if (request.files === undefined) {
+    return response.status(400).send(
+      "Files not attached. Please check the request",
+    );
+  }
+  console.log(request.files)
   if (request.files?.length == 0) {
-    return response.status(500).send({
-      body: "File not uploaded. Please check the format",
-    });
+    return response.status(500).send(
+      "File not uploaded. Please check the format",
+    );
   }
   await addToQueue(request.files);
   const filesQueued = request?.files?.length ?? "";
